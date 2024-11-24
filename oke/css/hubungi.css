@@ -67,7 +67,7 @@ section.hubungi-kami{
 
 .hk-r input{
     height: 50px;
-    min-width: 380px;
+  
     padding:0 10px;
     border-radius: 10px;
     outline: 0 solid var(--main-darker-color);
@@ -78,7 +78,7 @@ section.hubungi-kami{
 }
 .hk-r textarea{
     height: 210px;
-    min-width: 380px;
+  
     padding: 10px;
     border-radius: 10px;
     outline: 0 solid var(--main-darker-color);
@@ -121,7 +121,7 @@ section.hubungi-kami{
     }
     .hk-r form{
         background-color: var(--main-color);
-        width: 400px;
+        max-width: 320px;
         display: flex;
         flex-direction: column;
         padding:50px 20px;
@@ -129,7 +129,28 @@ section.hubungi-kami{
         border-radius: 20px;
         gap: 1rem;
     }
-    
+/* 
+    .hk-r input{
+        height: 50px;
+        min-width: 290px;
+        padding:0 10px;
+        border-radius: 10px;
+        outline: 0 solid var(--main-darker-color);
+        transition:.1s;
+    }
+    .hk-r input:focus{
+        outline: 3px solid var(--main-darker-color);
+    }
+    .hk-r textarea{
+        height: 210px;
+        min-width: 380px;
+        padding: 10px;
+        border-radius: 10px;
+        outline: 0 solid var(--main-darker-color);
+        transition:.1s;
+        resize: none;
+    }
+     */
 }
 
 

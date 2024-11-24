@@ -1,4 +1,5 @@
-function sendMail(){
+function sendMail(event){
+    event.preventDefault();
     (function(){
         emailjs.init("_2bfOzNY3BpkZAVri")
     })();
@@ -8,6 +9,7 @@ function sendMail(){
         from_email : document.querySelector("#from_email").value,
         message : document.querySelector("#message").value
     };
+
 
     let serviceID = "service_va9yysp";
     let templateID = "template_9322x2d";

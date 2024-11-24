@@ -26,6 +26,9 @@ navKeluar.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
+    const width = window.innerWidth;
+
+    console.log("scrollY: ", scrollY);
 
     // Tambahkan kelas "scrolled" ke navbar jika scrollY > 0
     if (scrollY > 0) {
@@ -33,7 +36,20 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
-
+if(width <= 720){
+    if (scrollY >= 1 && scrollY <= 700) {
+        setActiveNav(0);
+    } else if (scrollY >= 701 && scrollY <= 1800) {
+        setActiveNav(1);
+    } else if (scrollY >= 1801 && scrollY <= 2700) {
+        setActiveNav(2);
+    } else if (scrollY >= 2701 && scrollY <= 3700) {
+        setActiveNav(3);
+    } else if (scrollY >= 3701) {
+        setActiveNav(4);
+    }
+    
+}else{
     if (scrollY >= 1 && scrollY <= 500) {
         setActiveNav(0);
     } else if (scrollY >= 501 && scrollY <= 1100) {
@@ -45,4 +61,6 @@ window.addEventListener('scroll', () => {
     } else if (scrollY >= 2701) {
         setActiveNav(4);
     }
+
+}
 });

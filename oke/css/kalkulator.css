@@ -89,11 +89,15 @@ section.kalkulator{
 
     .kal-l{
         gap: 1em;
+        
+    }
+    .kal-l form{
+        flex-wrap: wrap;
     }
 
     #calculator{
-        height: 500px;
-        width: 500px;
+        height: 300px;
+        width: 300px;
         margin: 0 auto;
     }
   
