@@ -1,0 +1,156 @@
+section.saran{
+    background-color: var(--main-lighter-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.saran .header{
+    text-align: right;
+}
+
+.saran .content{
+    display: flex;
+    margin-top: 4em;
+    
+}
+
+.saran .kiri{
+ flex: .5;
+}
+
+.saran .kanan{
+    margin-left:auto ;
+}
+
+.saran input, textarea{
+border: none;
+  margin: 0;
+  box-shadow: inset 0 0 0 2px #BDBDBD;
+  background-color: #e4e4e4;
+  outline: none;
+  resize: none; 
+  border-radius: 30px;
+  padding: 5px 15px;   
+  transition: .3s; 
+}
+.saran input:focus, textarea:focus{
+  background-color: #ffffff;
+   
+  box-shadow: inset 0 0 0 3px var(--main-darker-color);
+   
+}
+
+.saran form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.saran input{
+    height: 50px;
+    width: 400px;
+    box-sizing: border-box;
+}
+
+.saran textarea{
+    height: 400px;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.saran .midle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 1em;
+    
+}
+
+.saran .midle input{
+    width: 200px;
+}
+.saran .midle span i{
+    font-size: small;
+}
+.saran .midle span {
+    align-self: stretch;
+    width: 100%;
+    padding: 0;
+    gap: 0;
+    justify-content: space-between;
+    padding: 5px 15px;
+
+}
+
+.bingung{
+    position: relative;
+}
+.bingung i{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.texta i{
+    top: 15px;
+    transform: translateY(0);
+}
+
+.saran img{
+    position: absolute;
+    transform: scale(.6);
+    bottom: -50%;
+    left: 0;
+}
+
+@media (min-width: 0) and (max-width: 720px) {
+    .saran img{
+        display: none;
+    }
+
+    .saran .kanan{
+        margin-left:0 ;
+    }
+
+
+    .saran input{
+        height: 50px;
+        width: 350px;
+    }
+
+    .saran .midle input{
+        width: 175px;
+    }
+    .saran textarea{
+        height: 400px;
+        width: 100%;
+        padding: 15px 25px;
+        box-sizing: border-box;
+    }
+
+    .saran .header{
+        text-align: center;
+    }
+
+    .saran .content{
+        display: flex;
+        margin-top: 4em;
+        position: relative;
+    }
+
+    .saran .midle span {
+        align-self: stretch;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+        justify-content: space-between;
+        padding: 5px 15px;
+
+    }
+
+
+
+}

@@ -1,0 +1,200 @@
+section.anggota{
+    background-color: var(--main-lighter-color);
+}
+
+.inner-anggota{
+    display: flex;
+    flex-direction: column;
+}
+
+.anggota .header{
+    text-align: center;
+}
+.anggota ul.content{
+    margin-top: 4em;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.anggota ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.anggota .card{
+    max-width: 200px;
+
+}
+
+.anggota .card .cover-img{
+    width: 200px;
+    height: 200px;
+    background-color: var(--main-darker-color);
+    border-radius: 100px;
+    overflow: hidden;
+    object-fit: cover;
+    box-shadow: 0 0px 10px ;
+}
+
+.anggota .card .cover-img img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.anggota .card .nama{
+    margin-top: 1em;
+    font-family: Roboto-bold;
+    font-size: 20px;
+    text-align: center;
+    
+}
+.anggota .card .npm{
+    font-family: Roboto-bold;
+    color: var(--main-text-color);
+    font-size: 14px;
+    margin-top: 1em ;
+    letter-spacing: 4px;
+    text-align: center;
+    
+}
+.anggota .card .sosmed{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1em;
+    margin: 1em 0;
+    
+}
+.anggota .card .sosmed a{
+    display: inline-block;
+    flex-wrap: wrap;
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-darker-color);
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;    
+    
+}
+
+.anggota .sosmed i{
+    color: var(--main-text-light-color);
+    font-size: 30px;
+}
+.anggota .card .quote{
+    font-style: italic;
+    font-family: Roboto-light;
+    text-align: center ;
+}
+
+.show-wa{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(87, 87, 87, 0);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.show-wa .container{
+    width: 200px;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: var(--main-darker-color);
+    color: white;
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.wa-active{
+    display: flex;
+    background-color: rgba(87, 87, 87, .7);
+}
+
+@media (min-width: 0) and (max-width: 720px) {
+    .anggota .card{
+        max-width: 100px;
+    }
+
+    .anggota .card .cover-img{
+        width: 100px;
+        height: 100px;
+        background-color: var(--main-darker-color);
+        border-radius: 100px;
+        overflow: hidden;
+        object-fit: cover;
+        box-shadow: 0 0px 10px ;
+    }
+
+    .anggota .card .cover-img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .anggota .sosmed i{
+        color: var(--main-text-light-color);
+        font-size: 15px;
+    }
+    .anggota .card .quote{
+        font-style: italic;
+        font-size: 12px;
+        font-family: Roboto-light;
+        text-align: center ;
+    }
+
+
+
+    .anggota .card .nama{
+        margin-top: 1em;
+        font-family: Roboto-bold;
+        font-size: 16px;
+        text-align: center;
+        
+    }
+    .anggota .card .npm{
+        font-family: Roboto-bold;
+        color: var(--main-text-color);
+        font-size: 10px;
+        margin-top: 1em ;
+        letter-spacing: 0;
+        text-align: center;
+        
+    }
+    .anggota .card .sosmed{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: .3em;
+        margin: 1em 0;
+        
+    }
+
+    .anggota .card .sosmed a{
+        width: 25px;
+        height: 25px;
+        background-color: var(--main-darker-color);
+        border-radius: 25px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;    
+        
+    }
+
+}

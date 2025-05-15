@@ -1,0 +1,73 @@
+section.materi{
+    padding: 2em 0;
+}
+
+.inner-materi{
+
+}
+
+.inner-materi h6{
+ margin-bottom: 1em;
+}
+
+.inner-materi h2{
+margin-bottom: 2em;
+}
+
+.inner-materi .content{
+    display: flex ;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.inner-materi li{
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.inner-materi .kiri{
+
+}
+
+.inner-materi span{
+    font-family: Roboto-bold;
+    font-size: 20px;
+    margin-bottom: .5em;
+    display: inline-block;
+}
+
+.inner-materi p{
+    font-size: 20px;
+    font-family: Roboto-light;
+    letter-spacing: 5%;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.inner-materi .kanan{
+    width: 400px; 
+    height: 200px; 
+    align-self: center;
+    overflow: hidden;
+}
+
+.inner-materi .kanan img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 0) and (max-width: 720px) {
+    .inner-materi li{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner-materi .kiri{
+        width: 100%;
+    }
+
+}
+
+

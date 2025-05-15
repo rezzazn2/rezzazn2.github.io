@@ -4,8 +4,281 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projek Akhir Kalkulus Semester 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/beranda.css">
+    <link rel="stylesheet" href="css/materi.css">
+    <link rel="stylesheet" href="css/anggota.css">
+    <link rel="stylesheet" href="css/dokumentasi.css">
+    <link rel="stylesheet" href="css/saran.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <h1>hallo</h1>
+
+    <nav>
+        <div class="inner-nav spacer flex">
+            <div class="logo"><i class="fa-regular fa-map"></i><p>FanCalc</p></div>
+            <div class="flex gap okelah">
+                <ul class="list-nav flex">
+                    <li class="nav-active"><a href="#beranda">Beranda</a></li>
+                    <li><a href="#materi">Materi</a></li>
+                    <li><a href="#anggota">Anggota</a></li>
+                    <li><a href="#dokumentasi">Dokumentasi</a></li>
+                    <li><a href="#saran">Saran</a></li>
+                </ul>
+                <span class="btn-regular"><p><a href="">Mulai</a></p> <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+            <i class="fa-solid fa-bars" style="font-size: 40px;"></i>
+        </div>
+    </nav>
+    <nav class="mobile">
+        <div class="inner-nav spacer flex">
+            <div class="top">
+                <div class="logo"><i class="fa-regular fa-map"></i><p>FanCalc</p></div>
+                <i class="fa-solid fa-xmark" id="close-navMobile"></i>
+            </div>
+            
+                <ul class="list-nav flex">
+                    <li class="nav-active"><a href="#beranda">Beranda</a></li>
+                    <li><a href="#materi">Materi</a></li>
+                    <li><a href="#anggota">Anggota</a></li>
+                    <li><a href="#dokumentasi">Dokumentasi</a></li>
+                    <li><a href="#saran">Saran</a></li>
+                </ul>
+                <span class="btn-regular"><p><a href="">Mulai</a></p> <i class="fa-solid fa-arrow-right"></i></span>
+              
+        </div>
+    </nav>
+
+    <section class="beranda" id="beranda">
+        <div class="inner-beranda spacer">
+            <div class="kiri">
+                <div class="header">
+                    <h6>Visi Kami</h6>
+                    <h2>Menyediakan kemudahan menghitung luas suatu bangunan</h2>
+                </div>
+                <p class="kiri-p">Menggunakan beberapa konsep materi kalkulus dan pengimplementasianya</p>
+
+                <ul>
+                    <li><i class="fa-regular fa-circle-check"></i> <p>Menghitung secara cepat & presisi</p></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <p>Peta dunia 100%</p></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <p>Fitur lengkap</p></li>
+                </ul>
+
+                <span class="btn-regular"><p><a href="#materi">Pelajari</a></p> <i class="fa-solid fa-magnifying-glass"></i></span>
+
+            </div>
+            <div class="world-map">
+                <img src="svg/World Map.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="materi" id="materi">
+        <div class="inner-materi spacer">
+            <div class="header">
+                <h6>Konsep</h6>
+                <h2>Materi-materi yang berkaitan</h2>
+            </div>
+
+            <ul class="content">
+                <li>
+                    <div class="kiri">
+                        <span>Bangun Datar</span>
+                        <p>Bangun datar adalah bentuk dua dimensi yang memiliki sisi dan sudut, seperti persegi, segitiga, dan lingkaran. Materi ini digunakan untuk menghitung luas bentuk-bentuk yang sederhana dan beraturan, tanpa perlu pendekatan matematis yang kompleks. Pada sistem ini, bangun datar menjadi dasar utama dalam perhitungan luas objek geometris yang umum ditemui.</p>
+                    </div>
+                    <div class="kanan">
+                        <img src="images/Screenshot 2025-04-25 154011.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="kiri">
+                        <span>Integral</span>
+                        <p>Integral digunakan untuk menghitung luas dari bentuk yang tidak beraturan, terutama yang melibatkan garis lengkung. Dalam konteks ini, integral membantu menentukan luas bidang dengan pendekatan limit dan penjumlahan tak hingga. Materi ini sangat penting saat bentuk tanah atau bangunan tidak bisa diwakili oleh bangun datar biasa, seperti batas lengkung atau bentuk melengkung bebas.</p>
+                    </div>
+                    <div class="kanan">
+                        <img src="images/Screenshot 2025-04-25 154011.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="kiri">
+                        <span>Vektor</span>
+                        <p>Vektor digunakan untuk merepresentasikan posisi titik dalam bidang, terutama saat menghitung luas berdasarkan koordinat. Dengan menggunakan konsep vektor, luas suatu segitiga atau bidang lainnya. dapat dihitung dari titik-titik koordinat yang menghubungkannya, tanpa harus mengetahui panjang sisi secara langsung Materi ini berguna saat data yang tersedia berupa titik-titik lokasi dalam sistem koordinat.</p>
+                    </div>
+                    <div class="kanan">
+                        <img src="images/Screenshot 2025-04-25 154011.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="anggota" id="anggota">
+       <div class="innner-anggota spacer">
+            <div class="header">
+                <h6>Tim Kami</h6>
+                <h2>Informasi Anggota Kelompok</h2>
+            </div>
+            <ul class="content">
+                <li class="card">
+                    <div class="cover-img"><img src="images/gibran.jpg" alt=""></div>
+                    <p class="nama">M. Gibran Fajar</p>
+                    <p class="npm">247006111181</p>
+                    <ul class="sosmed">
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                    <p class="quote">"Tak harus hebat untuk memulai, tapi mulai itu langkah awal menjadi hebat"</p>
+                </li>
+                <li class="card">
+                    <div class="cover-img"><img src="images/enza.jpg" alt=""></div>
+                    <p class="nama">Muhammad Rezza</p>
+                    <p class="npm">247006111182</p>
+                    <ul class="sosmed">
+                        <li><a href="https://www.instagram.com/rezzaree_?igsh=MTNjbjE2NDJkZjJkMw==" target="_blank" ><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/muhammad.rezza.58726" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                    <p class="quote">"Tak harus hebat untuk memulai, tapi mulai itu langkah awal menjadi hebat"</p>
+                </li>
+                <li class="card">
+                    <div class="cover-img"><img src="images/yusep.jpg" alt=""></div>
+                    <p class="nama">Yusep Muhamad N.</p>
+                    <p class="npm">247006111186</p>
+                    <ul class="sosmed">
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                    <p class="quote">"Tak harus hebat untuk memulai, tapi mulai itu langkah awal menjadi hebat"</p>
+                </li>
+                <li class="card">
+                    <div class="cover-img"><img src="images/alex.png" alt=""></div>
+                    <p class="nama">Sammi Zaki Fadillah</p>
+                    <p class="npm">247006111187</p>
+                    <ul class="sosmed">
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                    <p class="quote">"Tak harus hebat untuk memulai, tapi mulai itu langkah awal menjadi hebat"</p>
+                </li>
+                <li class="card">
+                    <div class="cover-img"><img src="" alt=""></div>
+                    <p class="nama">Muhamad Sabilil Haq</p>
+                    <p class="npm">247006111198</p>
+                    <ul class="sosmed">
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                    <p class="quote">"Tak harus hebat untuk memulai, tapi mulai itu langkah awal menjadi hebat"</p>
+                </li>
+            </ul>
+       </div> 
+       <div class="show-wa">
+            <div class="container">
+                <p></p>
+            </div>      
+       </div>
+    </section>
+
+    <section class="dokumentasi" id="dokumentasi">
+        <div class="inner-dokumentasi spacer">
+            <div class="header">
+                <h6>Panduan & Riwayat</h6>
+                <h2>Dokumen Projek</h2>
+            </div>
+            <ul class="content">
+                <li>
+                    <div class="card">
+                        <i class="fa-solid fa-file"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Laporan & Riwayat Projek</h2>
+                        <p class="text">Berisi riwayat laporan penegerjaan UAS KALKULUS II tiap minggu, dijelaskan  tugas tiap anggota dan pengerjaan yang telah dilakukan.</p>
+                        <span class="btn-regular"><p><a href="">Lihat</a></p> <i class="fa-solid fa-eye"></i></span>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Source Code</h2>
+                        <p class="text">Kode dari projek yang kami buat sudah kami simpan Repository Git Hub yang bisa diakses secara gratis.</p>
+                        <span class="btn-regular"><p><a href="">Lihat</a></p> <i class="fa-solid fa-eye"></i></span>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Laporan & Riwayat Projek</h2>
+                        <p class="text">Disediakan buku panduan untuk menjelaskan secara rinci tata cara pengguanaan atribut fungsional dalam website.</p>
+                        <span class="btn-regular"><p><a href="">Lihat</a></p> <i class="fa-solid fa-eye"></i></span>
+
+                    </div>
+                </li>
+            </ul>
+            <img src="svg/vektor1.svg" alt="">
+        </div>
+    </section>
+
+    <section class="saran" id="saran">
+        <div class="inner-saran spacer">
+            <div class="header">
+                <h6>Ulasan</h6>
+                <h2>Saran & Masukan</h2>
+            </div>
+            <div class="content">
+                <div class="kiri">
+                    <img src="svg/vektor2.svg" alt="">
+                </div>
+                <div class="kanan">
+                    <form action="" class="sarn-form">
+                        <div class="bingung">
+                            <input type="text" placeholder="Nama">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="bingung">
+                            <input type="email" placeholder="email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        
+                        
+                        
+                        <div class="midle">
+                            <div class="bingung">
+                                <input type="text" placeholder="kesan">
+                            </div>
+                            <span class="btn-regular"><p><a href="">Kirim</a></p> <i class="fa-solid fa-paper-plane"></i></span>
+                        </div>
+                       <div class="bingung texta">
+                             <textarea name="" id="" placeholder="saran/masukan"></textarea>
+                             <i class="fa-solid fa-paragraph"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="inner-footer spacer">
+            <div class="content">
+                <div class="logo"><i class="fa-regular fa-map"></i><p>FanCalc</p></div>
+                <p class="copyr">© Copyright FanCalc 2025. All right reserved</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/wa.js"></script>
+    <script src="https://kit.fontawesome.com/18c9c6e968.js" crossorigin="anonymous"></script>
 </body>
 </html>

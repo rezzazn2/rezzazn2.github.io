@@ -1,0 +1,125 @@
+section.dokumentasi{
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}   
+
+.inner-dokumentasi{
+    
+}
+
+.dokumentasi .content{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 60%;
+}
+
+.dokumentasi .content li{
+    display: flex;
+    gap: 2em;
+
+}
+
+.dokumentasi .content li .card{
+   width: 180px;
+   height: 230px;
+   border-radius: 0 70px 0 0;
+   background-color: var(--main-darker-color);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.dokumentasi .content li .card i{
+   font-size: 80px;
+    color: var(--main-lighter-color);
+}
+
+
+.dokumentasi .desc{
+    display: flex;
+    flex-direction: column;
+    max-width: 40%
+
+}
+.dokumentasi .desc h2{
+    font-size: 24px;
+    font-family: Roboto-medium;
+    margin-bottom: 1em;
+}
+.dokumentasi .desc p{
+    font-size: 16px;
+    text-align: justify;
+}
+.dokumentasi .desc span{
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.dokumentasi img{
+    position: absolute;
+    transform: scale(.7);
+    bottom: -50%;
+    right: 0;
+
+}
+
+@media (min-width: 0) and (max-width: 720px) {
+    .dokumentasi img{
+        display: none;
+
+
+    }
+
+    
+
+    .dokumentasi .content{
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        max-width: 100%;
+    }
+
+    .dokumentasi .content li{
+        justify-content: center;
+    }
+
+    .dokumentasi .desc h2{
+        font-size: 16px;
+        font-family: Roboto-medium;
+        margin-bottom: .5em;
+    }
+    .dokumentasi .desc p{
+        font-size: 12px;
+        text-align: justify;
+    }
+    .dokumentasi .desc span{
+        align-self: flex-end;
+        margin-top: auto;
+    }
+
+
+    .dokumentasi .desc p.text{
+        
+        overflow: scroll;
+    }
+
+    .dokumentasi .desc span{
+        transform: scale(.7);
+    }
+
+    .dokumentasi .content li .card{
+        width: 126px;
+        height: 161px;
+        border-radius: 0 70px 0 0;
+        background-color: var(--main-darker-color);
+    }
+
+
+    
+
+
+}

@@ -1,0 +1,30 @@
+footer{
+    height: 400px;
+    width: 100%;
+    background-color: var(--main-darker-color);
+}
+
+.inner-footer{
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .content{
+   
+}
+
+footer .content .logo{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: var(--main-text-light-color);
+    font-size: 40px;
+
+}
+footer .content .copyr{
+    color: #7D7D7D;
+    margin-top: 1em;
+}
