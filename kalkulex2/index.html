@@ -239,13 +239,13 @@
                     <img src="svg/vektor2.svg" alt="">
                 </div>
                 <div class="kanan">
-                    <form action="" class="sarn-form">
+                    <form  class="sarn-form" id="email-form">
                         <div class="bingung">
-                            <input type="text" placeholder="Nama">
+                            <input name="from_name" id="from_name" type="text" placeholder="Nama">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="bingung">
-                            <input type="email" placeholder="email">
+                            <input name="from_email" id="from_email" type="email" placeholder="email">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         
@@ -253,15 +253,16 @@
                         
                         <div class="midle">
                             <div class="bingung">
-                                <input type="text" placeholder="kesan">
+                                <input name="kesan" id="kesan" type="text" placeholder="kesan">
                             </div>
-                            <span class="btn-regular"><p><a href="">Kirim</a></p> <i class="fa-solid fa-paper-plane"></i></span>
+                            <button type="button" class="btn-regular" id="btn-saran">kirim <i class="fa-solid fa-paper-plane"></i></button>
                         </div>
                        <div class="bingung texta">
-                             <textarea name="" id="" placeholder="saran/masukan"></textarea>
+                             <textarea  name="message" id="message" placeholder="saran/masukan"></textarea>
                              <i class="fa-solid fa-paragraph"></i>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>
@@ -279,6 +280,17 @@
 
     <script src="js/script.js"></script>
     <script src="js/wa.js"></script>
+    <script src="js/email.js"></script>
     <script src="https://kit.fontawesome.com/18c9c6e968.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "_2bfOzNY3BpkZAVri",
+      });
+   })();
+</script>
 </body>
 </html>

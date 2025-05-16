@@ -1,8 +1,11 @@
 const navbar = document.querySelector('nav');
 const navListChildren = document.querySelectorAll(".list-nav")[0].children;
+const navMObListChildren = document.querySelectorAll(".mobile .list-nav")[0].children;
 const navMobile = document.querySelector('nav.mobile');
 const closeNavMob = document.querySelector('#close-navMobile');
 const openNavMob = document.querySelector('.fa-bars');
+
+
 
 // Fungsi untuk mengatur kelas aktif pada elemen navList
 const setActiveNav = (index) => {
@@ -10,8 +13,12 @@ const setActiveNav = (index) => {
     for (let i = 0; i < navListChildren.length; i++) {
         navListChildren[i].classList.remove("nav-active");
     }
+    for (let i = 0; i < navListChildren.length; i++) {
+        navMObListChildren[i].classList.remove("nav-active");
+    }
     // Tambahkan kelas "nav-active" pada elemen dengan index tertentu
     navListChildren[index].classList.add("nav-active");
+    navMObListChildren[index].classList.add("nav-active");
 };
 
 
@@ -20,7 +27,7 @@ window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const width = window.innerWidth;
 
-    console.log("scrollY: ", scrollY);
+
 
     // Tambahkan kelas "scrolled" ke navbar jika scrollY > 0
     if (scrollY > 0) {

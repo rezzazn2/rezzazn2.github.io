@@ -71,10 +71,13 @@ border: none;
 .saran .midle input{
     width: 200px;
 }
-.saran .midle span i{
+.saran .midle button i{
     font-size: small;
 }
-.saran .midle span {
+.saran .midle button {
+    box-shadow: none;
+    outline: none;
+    border: none;
     align-self: stretch;
     width: 100%;
     padding: 0;
@@ -141,7 +144,7 @@ border: none;
         position: relative;
     }
 
-    .saran .midle span {
+    .saran .midle button {
         align-self: stretch;
         width: 100%;
         padding: 0;
