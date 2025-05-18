@@ -16,7 +16,7 @@ section.anggota{
     gap: 1em;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
+    align-items:first baseline;
 }
 .anggota ul li{
     display: flex;
