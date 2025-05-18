@@ -4,9 +4,7 @@ section.dokumentasi{
     overflow: hidden;
 }   
 
-.inner-dokumentasi{
-    
-}
+
 
 .dokumentasi .content{
     margin-top: 2em;
@@ -53,7 +51,7 @@ section.dokumentasi{
     font-size: 16px;
     text-align: justify;
 }
-.dokumentasi .desc span{
+.dokumentasi .desc a{
     align-self: flex-end;
     margin-top: auto;
 }
