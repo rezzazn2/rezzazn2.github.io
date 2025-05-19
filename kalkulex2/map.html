@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Peta Pengukuran dan Pencarian</title>
+    <title>Peta Pengukuran Lengkap</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Leaflet CSS -->
+    <!-- Leaflet CSS & Plugins -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
@@ -15,7 +15,7 @@
 
         .back-button {
             position: absolute;
-            bottom: 20px;     /* posisi kiri bawah */
+            bottom: 20px;
             left: 20px;
             z-index: 1000;
             background-color: white;
@@ -25,61 +25,48 @@
             font-size: 14px;
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: background-color 0.2s, border-color 0.2s;
         }
 
         .back-button:hover {
             background-color: #f0f0f0;
-            border-color: #999;
         }
     </style>
 </head>
 <body>
-    <button class="back-button" onclick="window.location.href='index.html'">
-        ← Kembali ke Halaman Utama
-    </button>
-
+    <button class="back-button" onclick="window.location.href='index.html'">← Kembali</button>
     <div id="map"></div>
 
-    <!-- Leaflet JS -->
+    <!-- Leaflet JS & Plugins -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.geometryutil/0.9.3/leaflet.geometryutil.min.js"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
     <script>
-        const streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
-            maxZoom: 19
-        });
+        // Inisialisasi Peta
+        const map = L.map('map').setView([-7.2, 108.3], 11);
 
-        const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        const street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap',
+            maxZoom: 19
+        }).addTo(map);
+
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles © Esri',
             maxZoom: 19
         });
 
-        const map = L.map('map', {
-            center: [-7.2, 108.3],
-            zoom: 11,
-            maxZoom: 19,
-            layers: [streetLayer]
-        });
-
-        const baseMaps = {
-            "Peta Jalan (Street Map)": streetLayer,
-            "Citra Satelit (Satellite)": satelliteLayer
-        };
-        L.control.layers(baseMaps).addTo(map);
-
-        const drawnItems = new L.FeatureGroup();
-        const lengthLabels = new L.LayerGroup();
-        map.addLayer(drawnItems);
-        map.addLayer(lengthLabels);
-
-        L.Control.geocoder({
-            defaultMarkGeocode: true,
-            placeholder: "Cari lokasi..."
+        L.control.layers({
+            "Peta Jalan": street,
+            "Citra Satelit": satellite
         }).addTo(map);
+
+        // Geocoder
+        L.Control.geocoder({ defaultMarkGeocode: true }).addTo(map);
+
+        const drawnItems = new L.FeatureGroup().addTo(map);
+        const lengthLabels = new L.LayerGroup().addTo(map);
+        const pointLabels = new L.LayerGroup().addTo(map);
 
         const drawControl = new L.Control.Draw({
             edit: { featureGroup: drawnItems },
@@ -87,42 +74,72 @@
                 polygon: { allowIntersection: false, showArea: true, metric: true },
                 rectangle: true,
                 polyline: false,
-                circle: false,
                 marker: false,
+                circle: false,
                 circlemarker: false
             }
         });
         map.addControl(drawControl);
 
+        // Tampilkan panjang sisi
         function showEdgeLengths(latlngs) {
             lengthLabels.clearLayers();
             for (let i = 0; i < latlngs.length; i++) {
                 const p1 = latlngs[i];
                 const p2 = latlngs[(i + 1) % latlngs.length];
-                const midPoint = L.latLng((p1.lat + p2.lat) / 2, (p1.lng + p2.lng) / 2);
-                const distance = map.distance(p1, p2);
-                const label = L.marker(midPoint, {
+                const mid = L.latLng((p1.lat + p2.lat) / 2, (p1.lng + p2.lng) / 2);
+                const dist = map.distance(p1, p2);
+
+                const label = L.marker(mid, {
                     icon: L.divIcon({
                         className: 'length-label',
-                        html: `<div style="background: white; padding: 2px 4px; border-radius: 3px; border: 1px solid gray; font-size: 12px;">
-                                  ${distance.toFixed(2)} m
-                               </div>`,
-                        iconSize: [100, 24]
+                        html: `<div style="background:white;padding:2px 4px;border-radius:3px;border:1px solid gray;font-size:12px;">${dist.toFixed(2)} m</div>`,
+                        iconSize: [80, 20]
                     })
                 });
                 lengthLabels.addLayer(label);
             }
         }
 
+        // Tampilkan koordinat relatif + huruf titik (A, B, C, ...)
+        function showRelativeCoordinates(latlngs) {
+            pointLabels.clearLayers();
+            const base = latlngs[0];
+
+            for (let i = 0; i < latlngs.length; i++) {
+                const p = latlngs[i];
+                const dx = map.distance([base.lat, base.lng], [base.lat, p.lng]);
+                const dy = map.distance([base.lat, base.lng], [p.lat, base.lng]);
+
+                const deltaX = p.lng < base.lng ? -dx : dx;
+                const deltaY = p.lat < base.lat ? -dy : dy;
+
+                const labelName = String.fromCharCode(65 + i); // A, B, C, ...
+                const label = L.marker(p, {
+                    icon: L.divIcon({
+                        className: 'coord-label',
+                        html: `<div style="background:yellow;padding:2px 4px;border-radius:3px;border:1px solid gray;font-size:11px;">
+                            ${labelName}: (${deltaX.toFixed(2)}, ${deltaY.toFixed(2)}) m</div>`,
+                        iconSize: [120, 20],
+                        iconAnchor: [60, 10]
+                    })
+                });
+                pointLabels.addLayer(label);
+            }
+        }
+
+        // Saat objek digambar
         map.on(L.Draw.Event.CREATED, function (event) {
             const layer = event.layer;
             drawnItems.addLayer(layer);
+
             if (layer instanceof L.Polygon) {
                 const latlngs = layer.getLatLngs()[0];
                 const area = L.GeometryUtil.geodesicArea(latlngs);
-                const readableArea = area.toFixed(2) + ' m²';
-                layer.bindPopup('Luas: ' + readableArea).openPopup();
+                layer.bindPopup("Luas: " + area.toFixed(2) + " m²").openPopup();
+
                 showEdgeLengths(latlngs);
+                showRelativeCoordinates(latlngs);
             }
         });
     </script>
